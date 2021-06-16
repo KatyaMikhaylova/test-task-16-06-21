@@ -1,0 +1,17 @@
+<div class="channels-list" *ngIf="total && channels.length; else loading">
+    <div>{{ total }} каналов</div>
+    <mat-grid-list cols="6">
+        <mat-grid-tile  *ngFor="let item of channels" >
+            <app-channels-list-item [channel]="item"></app-channels-list-item>
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>
+
+
+
+<ng-template #loading>
+    <div class="loading">
+        <span>Loading</span>
+        <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
+    </div>
+</ng-template>
